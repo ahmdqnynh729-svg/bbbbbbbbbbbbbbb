@@ -9,6 +9,7 @@ import {
   Users,
   ArrowLeft,
   Fuel as Mosque,
+  Heart,
 } from "lucide-react";
 
 interface MainPageProps {
