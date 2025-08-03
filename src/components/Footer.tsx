@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false }) => {
             </div>
           </div>
 
-          <div className="text-center animate-fadeInScale" style={{ animationDelay: '0.2s' }}>
+          <div className="text-center animate-fadeInScale contact-section" style={{ animationDelay: '0.2s' }}>
             <div className={`backdrop-blur-sm rounded-2xl p-6 border transition-all duration-300 ${
               isDarkMode 
                 ? 'bg-gray-800/50 border-gray-600/30 hover:bg-gray-700/60' 
