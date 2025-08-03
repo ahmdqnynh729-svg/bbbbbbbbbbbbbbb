@@ -164,30 +164,73 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false }) => {
                     ? 'bg-gray-700/30 hover:bg-gray-600/40' 
                     : 'bg-white/5 hover:bg-white/10'
                 }`}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors font-medium flex items-center gap-2">
+                  <button 
+                    onClick={() => {
+                      const modal = document.createElement('div');
+                      modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4';
+                      modal.innerHTML = `
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full">
+                          <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">قوانين المسابقة</h3>
+                          <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start gap-2">
+                              <span class="text-blue-600">•</span>
+                              <span>أن يكون المتسابق من أبناء قرية دمليج</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                              <span class="text-blue-600">•</span>
+                              <span>ألا يزيد سن المتسابق عن ثمانية عشر سنة</span>
+                            </li>
+                          </ul>
+                          <button onclick="this.parentElement.parentElement.remove()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            إغلاق
+                          </button>
+                        </div>
+                      `;
+                      document.body.appendChild(modal);
+                      modal.onclick = (e) => {
+                        if (e.target === modal) modal.remove();
+                      };
+                    }}
+                    className="text-blue-100 hover:text-white transition-colors font-medium flex items-center gap-2 w-full text-right"
+                  >
                     <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
                     قوانين المسابقة
-                  </a>
+                  </button>
                 </div>
                 <div className={`rounded-xl p-3 transition-all ${
                   isDarkMode 
                     ? 'bg-gray-700/30 hover:bg-gray-600/40' 
                     : 'bg-white/5 hover:bg-white/10'
                 }`}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors font-medium flex items-center gap-2">
+                  <button 
+                    onClick={() => {
+                      const modal = document.createElement('div');
+                      modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4';
+                      modal.innerHTML = `
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full">
+                          <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">الأسئلة الشائعة</h3>
+                          <div class="text-gray-700 dark:text-gray-300 space-y-3">
+                            <p><strong>كيف يتم التسجيل؟</strong></p>
+                            <p>تسجيل بيانات الحفظة يتم من خلال المحفظين، ومن يحفظ مع ولي أمره عليه التواصل مع إدارة المسجد الشرقي</p>
+                            <a href="#contact" onclick="this.parentElement.parentElement.parentElement.remove(); document.querySelector('.contact-section')?.scrollIntoView({behavior: 'smooth'})" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors mt-2">
+                              للتواصل
+                            </a>
+                          </div>
+                          <button onclick="this.parentElement.parentElement.remove()" class="mt-4 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                            إغلاق
+                          </button>
+                        </div>
+                      `;
+                      document.body.appendChild(modal);
+                      modal.onclick = (e) => {
+                        if (e.target === modal) modal.remove();
+                      };
+                    }}
+                    className="text-blue-100 hover:text-white transition-colors font-medium flex items-center gap-2 w-full text-right"
+                  >
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                     الأسئلة الشائعة
-                  </a>
-                </div>
-                <div className={`rounded-xl p-3 transition-all ${
-                  isDarkMode 
-                    ? 'bg-gray-700/30 hover:bg-gray-600/40' 
-                    : 'bg-white/5 hover:bg-white/10'
-                }`}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors font-medium flex items-center gap-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    اتصل بنا
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -219,7 +262,35 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false }) => {
             </p>
             <div className="flex items-center justify-center gap-2 text-purple-300">
               <Heart className="w-4 h-4 animate-pulse" />
-              <span className="text-sm">Created by Ahmed Tareq - تم التطوير بحب وإخلاص لخدمة كتاب الله</span>
+              <button 
+                onClick={() => {
+                  const modal = document.createElement('div');
+                  modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4';
+                  modal.innerHTML = `
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 max-w-md w-full text-center">
+                      <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">تواصل مع المطور</h3>
+                      <div class="space-y-4">
+                        <a href="https://www.facebook.com/palestine7102023y/" target="_blank" rel="noopener noreferrer" class="block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                          فيسبوك
+                        </a>
+                        <a href="https://wa.me/201559181558" target="_blank" rel="noopener noreferrer" class="block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                          واتساب
+                        </a>
+                      </div>
+                      <button onclick="this.parentElement.parentElement.remove()" class="mt-4 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                        إغلاق
+                      </button>
+                    </div>
+                  `;
+                  document.body.appendChild(modal);
+                  modal.onclick = (e) => {
+                    if (e.target === modal) modal.remove();
+                  };
+                }}
+                className="text-sm hover:text-white transition-colors"
+              >
+                Created by Ahmed Tareq - تم التطوير بحب وإخلاص لخدمة كتاب الله
+              </button>
               <Heart className="w-4 h-4 animate-pulse" />
             </div>
           </div>
